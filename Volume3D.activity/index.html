@@ -2,42 +2,41 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>Volume3D Activity</title>
-	<meta name="viewport"
-		content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover" />
-	<link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)"
-		href="lib/sugar-web/graphics/css/sugar-96dpi.css">
-	<link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)"
-		href="lib/sugar-web/graphics/css/sugar-200dpi.css">
-	<link rel="stylesheet" href="css/activity.css">
-	<script src="lib/vue.min.js"></script>
-	<script src="lib/require.js"></script>
+    <meta charset="utf-8" />
+    <title>Volume3D Activity</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover" />
+    <link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)" href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+    <link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)" href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+    <link rel="stylesheet" href="css/activity.css">
+	<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.163.0/three.module.min.js" integrity="sha512-g1j6pTQxNd1pZRKqxCPDEDg/QbDBNIvOgwo80Uew+V9xZweFEW4Hj4BlyvHKKAjze45oLDh5Ehe51UyZnwM2Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="lib/vue.min.js"></script>
+    <script src="lib/require.js"></script>
 </head>
 
 <body>
-	<div id="app">
-		<sugar-toolbar ref="SugarToolbar">
-			<sugar-toolitem id="activity-button"></sugar-toolitem>
+    <div id="app">
+        <sugar-toolbar ref="SugarToolbar">
+            <sugar-toolitem id="activity-button"></sugar-toolitem>
 
-			<!-- Add more buttons here -->
-			<sugar-toolitem id="zoom-in" title="Zoom in"></sugar-toolitem>
-			<sugar-toolitem id="zoom-out" title="Zoom Out"></sugar-toolitem>
+            <!-- Add more buttons here -->
+            <sugar-toolitem id="zoom-in" title="Zoom in"></sugar-toolitem>
+            <sugar-toolitem id="zoom-out" title="Zoom Out"></sugar-toolitem>
 
-			<!-- Toolitems with class="pull-right" will be right aligned -->
-			<sugar-toolitem id="stop-button" title="Stop" class="pull-right"></sugar-toolitem>
-		</sugar-toolbar>
+            <!-- Toolitems with class="pull-right" will be right aligned -->
+            <sugar-toolitem id="stop-button" title="Stop" class="pull-right"></sugar-toolitem>
+        </sugar-toolbar>
 
-		<div id="user">
-			<h1>{{ displayText }}</h1>
-		</div>
-		<sugar-activity ref="SugarActivity" v-on:initialized="initialized"></sugar-activity>
-	</div>
+        <div id="user">
+            <h1>{{ displayText }}</h1>
+        </div>
+        <sugar-activity ref="SugarActivity" v-on:initialized="initialized"></sugar-activity>
+        <volume-3d></volume-3d> <!-- Use volume-3d component -->
+    </div>
 
-	<script src="js/components/SugarActivity.js"></script>
-	<script src="js/components/SugarToolbar.js"></script>
-	<script src="js/volume3d.js"></script> 
-	<script src="js/activity.js"></script>
+    <script src="js/components/SugarActivity.js"></script>
+    <script src="js/components/SugarToolbar.js"></script>
+    <script src="js/volume3d.js"></script>
+    <script src="js/activity.js"></script>
+	
 </body>
 
 </html>
